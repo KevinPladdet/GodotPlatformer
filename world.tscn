@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://t84gwj8m56yn"]
+[gd_scene load_steps=6 format=3 uid="uid://t84gwj8m56yn"]
 
 [ext_resource type="PackedScene" uid="uid://bts3ag0vk7qwu" path="res://Player/Player.tscn" id="1_1frl0"]
+[ext_resource type="Script" path="res://BG.gd" id="1_81j2b"]
+[ext_resource type="Texture2D" uid="uid://dxl4jljo8f0mw" path="res://Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_cep0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mok4x"]
 size = Vector2(1152, 136)
@@ -9,6 +11,17 @@ size = Vector2(1152, 136)
 size = Vector2(64, 712)
 
 [node name="World" type="Node2D"]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("1_81j2b")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="BG/ParallaxLayer"]
+position = Vector2(576, 324)
+scale = Vector2(3, 2.7)
+texture = ExtResource("2_cep0t")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 314.0
