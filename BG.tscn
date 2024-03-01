@@ -1,8 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo5sabk08o8sx"]
+[gd_scene load_steps=9 format=3 uid="uid://bo5sabk08o8sx"]
 
 [ext_resource type="Script" path="res://BG.gd" id="1_gdcsr"]
 [ext_resource type="Texture2D" uid="uid://dxl4jljo8f0mw" path="res://Sunny-land-files/Graphical Assets/environment/Background/back.png" id="1_qx3uj"]
 [ext_resource type="Texture2D" uid="uid://bbd8vwc7qe0tm" path="res://Sunny-land-files/Graphical Assets/environment/Background/middle.png" id="2_dc0sw"]
+[ext_resource type="Texture2D" uid="uid://kp85efxyesij" path="res://Sunny-land-files/Graphical Assets/sprites/eagle/eagle-attack-1.png" id="4_bbgom"]
+[ext_resource type="Texture2D" uid="uid://bjjsyp0k3tdi4" path="res://Sunny-land-files/Graphical Assets/sprites/eagle/eagle-attack-2.png" id="5_wqsko"]
+[ext_resource type="Texture2D" uid="uid://b8qnos76bvpcp" path="res://Sunny-land-files/Graphical Assets/sprites/eagle/eagle-attack-3.png" id="6_2cfqt"]
+[ext_resource type="Texture2D" uid="uid://bouqr4dfy53t5" path="res://Sunny-land-files/Graphical Assets/sprites/eagle/eagle-attack-4.png" id="7_3rgbt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itepm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bbgom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wqsko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2cfqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3rgbt")
+}],
+"loop": true,
+"name": &"EagleFly",
+"speed": 5.0
+}]
 
 [node name="BG" type="ParallaxBackground"]
 script = ExtResource("1_gdcsr")
@@ -46,3 +70,22 @@ texture = ExtResource("2_dc0sw")
 [node name="Middle7" type="Sprite2D" parent="ParallaxLayer2"]
 position = Vector2(1142, 464)
 texture = ExtResource("2_dc0sw")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(2400, 0)
+
+[node name="Eagle1" type="AnimatedSprite2D" parent="ParallaxLayer3"]
+position = Vector2(459, 192)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_itepm")
+animation = &"EagleFly"
+autoplay = "EagleFly"
+speed_scale = 1.2
+
+[node name="Eagle2" type="AnimatedSprite2D" parent="ParallaxLayer3"]
+position = Vector2(1753, 101)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_itepm")
+animation = &"EagleFly"
+autoplay = "EagleFly"
+speed_scale = 1.2
