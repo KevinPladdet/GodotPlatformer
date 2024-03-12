@@ -14,9 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cdw7n1qyrx0xm" path="res://Sunny-land-files/Graphical Assets/sprites/player/run/player-run-5.png" id="11_1g51t"]
 [ext_resource type="Texture2D" uid="uid://bj6f8738k5lvy" path="res://Sunny-land-files/Graphical Assets/sprites/player/run/player-run-6.png" id="12_xyndy"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0e6jp"]
-radius = 3.11526
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awipa"]
+size = Vector2(7.56564, 21.215)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u61o8"]
 animations = [{
@@ -212,9 +211,9 @@ _data = {
 script = ExtResource("1_776j3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 7.215)
+position = Vector2(0.5, 6.6075)
 scale = Vector2(2.247, 1)
-shape = SubResource("CapsuleShape2D_0e6jp")
+shape = SubResource("RectangleShape2D_awipa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 1)
