@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://t84gwj8m56yn"]
+[gd_scene load_steps=8 format=3 uid="uid://t84gwj8m56yn"]
 
 [ext_resource type="PackedScene" uid="uid://bts3ag0vk7qwu" path="res://Player/Player.tscn" id="1_1frl0"]
 [ext_resource type="Script" path="res://BG.gd" id="1_81j2b"]
 [ext_resource type="Texture2D" uid="uid://c22pp3icornq2" path="res://sunny-land-phaser-project/sunny-land/assets/environment/tileset.png" id="1_b32bt"]
 [ext_resource type="Texture2D" uid="uid://dxl4jljo8f0mw" path="res://Sunny-land-files/Graphical Assets/environment/Background/back.png" id="2_cep0t"]
+[ext_resource type="PackedScene" uid="uid://d1gxef5j31a14" path="res://Frog.tscn" id="5_6l605"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_manh6"]
 texture = ExtResource("1_b32bt")
@@ -465,5 +466,12 @@ offset_bottom = 335.0
 theme_override_font_sizes/font_size = 50
 text = "This is the second scene"
 
-[node name="Player" parent="." instance=ExtResource("1_1frl0")]
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Player" parent="Player" instance=ExtResource("1_1frl0")]
 position = Vector2(560, 416)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Frog" parent="Enemies" instance=ExtResource("5_6l605")]
+position = Vector2(392, 432)
