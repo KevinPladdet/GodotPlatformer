@@ -97,6 +97,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fxkxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d887")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d887")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d887")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d887")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d887")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d887")
 }],
 "loop": true,
 "name": &"Idle",
@@ -118,7 +136,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_livie"]
-radius = 77.0065
+radius = 189.066
 
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_2ppcm")
@@ -139,3 +157,4 @@ position = Vector2(-1, -7)
 shape = SubResource("CircleShape2D_livie")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
